@@ -11,33 +11,38 @@ all present pairs of horses over the observation period. The interaction
 networks present the number of occurrences for each interaction between
 horses, such as kicks, mutual grooming, and play interactions.
 
-<span id="anchor"></span>The metric values calculated include:
+The metric values calculated include:
 
-1.  a.  Weighted betweenness – Betweenness is a measure of how often a
+**Weighted Betweenness** – Betweenness is a measure of how often a
         given node is part of the shortest paths between two
         other nodes. With weighted betweenness, an alpha value is set so
         that the shortest path between nodes in the network is one with
         the strongest ties (horses that are closer together or, for
         interaction networks, horses that most frequently engage
         in interactions) and the fewest intermediate nodes.
-    b.  Strength – The strength of each node is the sum of the weights
+        
+**Strength** – The strength of each node is the sum of the weights
         of all edges connecting that node to other nodes. For spatial
         networks, this would be the summed inverse distance to all
         other horses. For interactions, it would be the sum of all
         interactions/hour directed towards other horses.
-    c.  In-strength – This was only calculated for interaction matrices,
+
+**In-strength** – This was only calculated for interaction matrices,
         the instrength of the node is the total sum of the rate of
         interactions received by that horse.
-    d.  Degree (alpha = 0.5) – when weighted degree is calculated with
+
+**Degree** (alpha = 0.5) – when weighted degree is calculated with
         an alpha weighting of 0.5, the number of contacts over which the
         total node strength is distributed increases the value of
         the measure. Thus, a horse that interacts with many other horses
         will have a higher degree score than a horse that interacts with
         only one or two other horses at a higher rate.
-    e.  In-degree (alpha=0.5) – This was only calculated for interaction
+
+**In-degree** (alpha=0.5) – This was only calculated for interaction
         matrices, and is the sum of the rate of interactions received by
         that horse, adjusted by alpha.
-    f.  Clustering coefficient – In binary networks, the clustering
+
+**Clustering coefficient** – In binary networks, the clustering
         coefficient for each node is the fraction of the number of ties
         present among a node’s immediate neighbours over the total
         number of ties possible. Because the network is weighted, the
@@ -83,18 +88,18 @@ Permutation methods – I used three different methods of permutation to
 check for network trends that were significantly different from random
 in my networks.
 
-1.  a.  weight – the network weight reshuffling permutation randomly
+**weight** – the network weight reshuffling permutation randomly
         moves edge weights around the network. This creates a random
         network, but maintains the distribution of edge values and does
         not add any ties between horses where there were no ties in the
         original network. Also, the number of ties originating from any
         one node (horse) does not change.
-    b.  link – the link reshuffling permutation repeatedly randomly
+**link** – the link reshuffling permutation repeatedly randomly
         selects two edges and swaps their destinations (ex: A was tied
         to B and C was tied to D, but now A is tied to D, and C is tied
         to B). This permutation method maintains the outstrength, but
         not the instrength of each node in the network.
-    c.  nodeperm – The node permutation method randomly permutes whole
+**nodeperm** – The node permutation method randomly permutes whole
         rows and columns of the input matrix. Thus, this method does not
         preserve the topology of the original matrix in the way that the
         weight and (to a lesser extent) the link permutations do, but in
