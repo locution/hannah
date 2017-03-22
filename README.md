@@ -94,11 +94,13 @@ in my networks.
         not add any ties between horses where there were no ties in the
         original network. Also, the number of ties originating from any
         one node (horse) does not change.
+        
 **link** – the link reshuffling permutation repeatedly randomly
         selects two edges and swaps their destinations (ex: A was tied
         to B and C was tied to D, but now A is tied to D, and C is tied
         to B). This permutation method maintains the outstrength, but
         not the instrength of each node in the network.
+        
 **nodeperm** – The node permutation method randomly permutes whole
         rows and columns of the input matrix. Thus, this method does not
         preserve the topology of the original matrix in the way that the
